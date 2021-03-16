@@ -1,0 +1,5 @@
+{
+	"name": "StatusIntent",
+	"auto": true,
+	"webhookUsed": true
+}

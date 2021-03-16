@@ -1,0 +1,80 @@
+{
+  "invocation": "mi aplicación de prueba",
+  "intents": [
+    {
+      "name": "HelloWorldIntent",
+      "phrases": [
+        "hola",
+        "di hola",
+        "di hola mundo"
+      ]
+    },
+    {
+      "name": "MyNameIsIntent",
+      "phrases": [
+        "{name}",
+        "mi nombre es {name}",
+        "soy {name}",
+        "puedes llamarme {name}"
+      ],
+      "inputs": [
+        {
+          "name": "name",
+          "type": {
+            "alexa": "AMAZON.US_FIRST_NAME",
+            "dialogflow": "@sys.given-name"
+          }
+        }
+      ]
+    },
+    {
+      "name": "LinkIntent",
+      "phrases": ["enlaza", "enlaza cuenta", "enlaza mi cuenta", "enlaza con mi cuenta"] 
+    },
+    {
+      "name": "StatusIntent",
+      "phrases": ["estado", "cual es el estado"] 
+    }
+
+  ],
+  "alexa": {
+    "interactionModel": {
+      "languageModel": {
+        "intents": [
+          {
+            "name": "AMAZON.CancelIntent",
+            "samples": []
+          },
+          {
+            "name": "AMAZON.HelpIntent",
+            "samples": []
+          },
+          {
+            "name": "AMAZON.StopIntent",
+            "samples": []
+          }
+        ]
+      }
+    }
+  },
+  "dialogflow": {
+    "intents": [
+      {
+        "name": "Default Fallback Intent",
+        "auto": true,
+        "webhookUsed": true,
+        "fallbackIntent": true
+      },
+      {
+        "name": "Default Welcome Intent",
+        "auto": true,
+        "webhookUsed": true,
+        "events": [
+          {
+            "name": "WELCOME"
+          }
+        ]
+      }
+    ]
+  }
+}
